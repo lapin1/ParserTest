@@ -1,5 +1,6 @@
 package com.tr.task03.entity;
 
+import org.jdom2.Attribute;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -8,7 +9,6 @@ import org.xml.sax.SAXException;
 
 
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
 
 public class JDOMApplianceParser {
@@ -17,15 +17,29 @@ public class JDOMApplianceParser {
         SAXBuilder builder = new SAXBuilder();
         Document document = builder.build("src/main/resources/appliance.xml");
 
-        Element root = document.getRootElement();
-        List<Element> appliance = root.getChildren();
-        Iterator<Element> applianceIterator = appliance.iterator();
+        System.out.println("Root element: " + document.getRootElement().getName());
 
-        while (applianceIterator.hasNext()){
-            Element applianceElement = applianceIterator.next();
-            System.out.println(applianceElement.getChildText("oven"));
-            System.out.println(applianceElement.getChildText("price"));
+        Element root = document.getRootElement();
+
+        List<Element> appliances = root.getChildren();
+
+        System.out.print("----------------------------------------------");
+
+        for(int tmp = 0; tmp < appliances.size(); tmp++){
+            Element appliance = appliances.get(tmp);
+            System.out.println("\nCategory: " + appliance.getName());
+            Attribute atr = appliance.getAttribute("id");
+            System.out.println("id: " + atr.getValue());
+            System.out.println("price: " + appliance.getChild("price").getText());
+            System.out.println("batteryCapacity: " + appliance.getChild("battery-capacity").getText());
+            System.out.println("os: " + appliance.getChild("os").getText());
+            System.out.println("memoryRom: " + appliance.getChild("memory-rom").getText());
+            System.out.println("systemMemory: " + appliance.getChild("system-memory").getText());
+            System.out.println("cpu: " + appliance.getChild("cpu").getText());
+            System.out.println("displayInches: " + appliance.getChild("display-inches").getText());
+
         }
+
 
 
     }
