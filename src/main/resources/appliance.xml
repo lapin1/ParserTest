@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <appliance>
-    <appliance>
-        <name>oven1</name>
-        <price>3.99</price>
-    </appliance>
-
+    <ovens>
+        <oven id = "1">
+             <price>1000</price>
+             <power-consumption>1200</power-consumption>
+             <weigth>10</weigth>
+             <capacity>2300</capacity>
+             <depth>60</depth>
+             <height>40</height>
+             <width>50</width>
+        </oven>
+        <oven id = "2">
+            <price>1200</price>
+            <power-consumption>1400</power-consumption>
+            <weigth>15</weigth>
+            <capacity>2600</capacity>
+            <depth>70</depth>
+            <height>50</height>
+            <width>60</width>
+        </oven>
+        <oven id = "3">
+            <price>1700</price>
+            <power-consumption>1100</power-consumption>
+            <weigth>16</weigth>
+            <capacity>2700</capacity>
+            <depth>65</depth>
+            <height>50</height>
+            <width>40</width>
+        </oven>
+    </ovens>
 
 </appliance>

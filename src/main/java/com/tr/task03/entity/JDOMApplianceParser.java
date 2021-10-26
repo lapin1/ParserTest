@@ -1,4 +1,4 @@
-package com.tr.jdom;
+package com.tr.task03.entity;
 
 import org.jdom2.Document;
 import org.jdom2.Element;
@@ -23,7 +23,7 @@ public class JDOMApplianceParser {
 
         while (applianceIterator.hasNext()){
             Element applianceElement = applianceIterator.next();
-            System.out.println(applianceElement.getChildText("name"));
+            System.out.println(applianceElement.getChildText("oven"));
             System.out.println(applianceElement.getChildText("price"));
         }
 
