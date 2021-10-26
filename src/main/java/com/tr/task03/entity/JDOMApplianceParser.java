@@ -1,44 +1,55 @@
 package com.tr.task03.entity;
 
-import org.jdom2.Attribute;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
-import org.xml.sax.SAXException;
 
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 
 public class JDOMApplianceParser {
-    public static void main(String[] args) throws SAXException, IOException, JDOMException {
+    public static void main(String[] args) throws  IOException, JDOMException {
+
 
         SAXBuilder builder = new SAXBuilder();
+
+
         Document document = builder.build("src/main/resources/appliance.xml");
 
-        System.out.println("Root element: " + document.getRootElement().getName());
 
         Element root = document.getRootElement();
 
+        System.out.println("Root element: " + document.getRootElement().getName());
+        System.out.println("Number of appliances in xml: " + root.getChildren().size());
+
+
         List<Element> appliances = root.getChildren();
+
 
         System.out.print("----------------------------------------------");
 
-        for(int tmp = 0; tmp < appliances.size(); tmp++){
-            Element appliance = appliances.get(tmp);
-            System.out.println("\nCategory: " + appliance.getName());
-            Attribute atr = appliance.getAttribute("id");
-            System.out.println("id: " + atr.getValue());
-            System.out.println("price: " + appliance.getChild("price").getText());
-            System.out.println("batteryCapacity: " + appliance.getChild("battery-capacity").getText());
-            System.out.println("os: " + appliance.getChild("os").getText());
-            System.out.println("memoryRom: " + appliance.getChild("memory-rom").getText());
-            System.out.println("systemMemory: " + appliance.getChild("system-memory").getText());
-            System.out.println("cpu: " + appliance.getChild("cpu").getText());
-            System.out.println("displayInches: " + appliance.getChild("display-inches").getText());
+        Iterator<Element> itr = appliances.iterator();
+
+        while (itr.hasNext()){
+            Element appliance = (Element) itr.next();
+
+            System.out.println();
+
+            System.out.println("id: " + appliance.getAttributeValue("id"));
+            System.out.println("category: " + appliance.getName());
+            System.out.println("price: " + appliance.getChildText("price"));
+           //System.out.println("os: " + appliance.getChildText("os"));
+           //System.out.println("memory-rom: " + appliance.getChildText("memory-rom"));
+           //System.out.println("system-memory: " + appliance.getChildText("system-memory"));
+           //System.out.println("cpu: " + appliance.getChildText("cpu"));
+           //System.out.println("display-inches: " + appliance.getChildText("display-inches"));
+
 
         }
+
 
 
 
