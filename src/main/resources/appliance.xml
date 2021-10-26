@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<appliances>
+<tc:appliance xmlns:tc="http://www.example.org/appliance"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.example.org/appliance  appliance.xsd">
+
     <laptop id = "1">
         <battery-capacity>4800</battery-capacity>
         <price>3000</price>
@@ -30,7 +33,7 @@
     <oven id = "1">
         <price>1000</price>
         <power-consumption>1200</power-consumption>
-        <weigth>10</weigth>
+        <weight>10</weight>
         <capacity>2300</capacity>
         <depth>60</depth>
         <height>40</height>
@@ -39,7 +42,7 @@
     <oven id = "2">
         <price>1200</price>
         <power-consumption>1400</power-consumption>
-        <weigth>15</weigth>
+        <weight>15</weight>
         <capacity>2600</capacity>
         <depth>70</depth>
         <height>50</height>
@@ -48,7 +51,7 @@
     <oven id = "3">
         <price>1700</price>
         <power-consumption>1100</power-consumption>
-        <weigth>16</weigth>
+        <weight>16</weight>
         <capacity>2700</capacity>
         <depth>65</depth>
         <height>50</height>
@@ -85,7 +88,7 @@
         <price>500</price>
         <power-consumption>20</power-consumption>
         <number-of-speakers>2</number-of-speakers>
-        <frequency-range>1.5</frequency-range>
+        <frequency-range>1</frequency-range>
         <cord-length>2</cord-length>
     </speakers>
     <speakers id = "2">
@@ -153,4 +156,4 @@
         <motor-speed-regulation>no regulation</motor-speed-regulation>
         <cleaning-width>30</cleaning-width>
     </vacuum-cleaner>
-</appliances>
+</tc:appliance>
