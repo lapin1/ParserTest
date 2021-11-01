@@ -1,4 +1,4 @@
-package com.tr.task03.entity;
+package com.tr.task03.bean;
 
 public class Laptop extends Appliance{
 
@@ -46,6 +46,8 @@ public class Laptop extends Appliance{
     public double getDisplayInches() {
         return displayInches;
     }
+
+    
 
     @Override
     public String toString() {

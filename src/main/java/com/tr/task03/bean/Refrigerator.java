@@ -1,24 +1,24 @@
-package com.tr.task03.entity;
+package com.tr.task03.bean;
 
-public class Oven extends Appliance{
+public class Refrigerator extends Appliance{
 
     private int powerConsumption;
     private int weight;
-    private int capacity;
-    private double depth;
+    private int freezerCapacity;
+    private int overallCapacity;
     private double height;
     private double width;
 
-    public Oven() {
+    public Refrigerator() {
 
     }
 
-    public Oven(int id, String category, double price, int powerConsumption, int weight, int capacity, double depth, double height, double width) {
+    public Refrigerator(int id, String category, double price, int powerConsumption, int weight, int freezerCapacity, int overallCapacity, double height, double width) {
         super(id, category, price);
         this.powerConsumption = powerConsumption;
         this.weight = weight;
-        this.capacity = capacity;
-        this.depth = depth;
+        this.freezerCapacity = freezerCapacity;
+        this.overallCapacity = overallCapacity;
         this.height = height;
         this.width = width;
     }
@@ -39,20 +39,20 @@ public class Oven extends Appliance{
         this.weight = weight;
     }
 
-    public int getCapacity() {
-        return capacity;
+    public int getFreezerCapacity() {
+        return freezerCapacity;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    public void setFreezerCapacity(int freezerCapacity) {
+        this.freezerCapacity = freezerCapacity;
     }
 
-    public double getDepth() {
-        return depth;
+    public int getOverallCapacity() {
+        return overallCapacity;
     }
 
-    public void setDepth(double depth) {
-        this.depth = depth;
+    public void setOverallCapacity(int overallCapacity) {
+        this.overallCapacity = overallCapacity;
     }
 
     public double getHeight() {
@@ -73,11 +73,11 @@ public class Oven extends Appliance{
 
     @Override
     public String toString() {
-        return "Oven{" +
+        return "Refrigerator{" +
                 "powerConsumption=" + powerConsumption +
                 ", weight=" + weight +
-                ", capacity=" + capacity +
-                ", depth=" + depth +
+                ", freezerCapacity=" + freezerCapacity +
+                ", overallCapacity=" + overallCapacity +
                 ", height=" + height +
                 ", width=" + width +
                 '}';

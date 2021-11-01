@@ -1,4 +1,6 @@
-package com.tr.task03.entity;
+package com.tr.task03.bean;
+
+import java.util.Objects;
 
 public class Appliance {
 
@@ -40,6 +42,18 @@ public class Appliance {
         this.price = price;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Appliance appliance = (Appliance) o;
+        return id == appliance.id && Double.compare(appliance.price, price) == 0 && category.equals(appliance.category);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, category, price);
+    }
 
     @Override
     public String toString() {

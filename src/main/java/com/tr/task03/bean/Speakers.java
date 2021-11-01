@@ -1,4 +1,4 @@
-package com.tr.task03.entity;
+package com.tr.task03.bean;
 
 public class Speakers extends Appliance{
 
